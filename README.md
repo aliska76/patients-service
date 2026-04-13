@@ -1,188 +1,140 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# Patient Heart Rate Monitoring API
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+A RESTful API service built with NestJS for managing patients and their heart rate readings. The service provides heart rate analytics, high heart rate event detection, and request tracking functionality.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+The implementation focuses on clean architecture, separation of concerns, and scalability while keeping the solution lightweight and aligned with the assignment requirements.
 
-## Description
+## Features
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+- **High Heart Rate Events**: Retrieve all instances where a patient's heart rate exceeds 100 bpm
+- **Heart Rate Analytics**: Calculate average, minimum, and maximum heart rate values per patient within a specified time range
+- **Patient Request Tracking**: Track how many times each patient's data has been requested
+- **Pagination**: Support for paginated responses on collection endpoints
+- **API Documentation**: Interactive Swagger documentation
+- **Input Validation**: Request validation using class-validator
+- **Error Handling**: Comprehensive error responses with appropriate HTTP status codes
 
-## Project setup
+## Technology Stack
+
+- NestJS 20.x
+- TypeScript 5.x
+- Jest for unit and  e2etesting
+- Swagger for API documentation
+- class-validator for input validation
+
+## Installation
 
 ```bash
-$ npm install
+npm install
 ```
 
-## Compile and run the project
+## Configuration
+### TypeScript Path Aliases
+The project uses path aliases for cleaner imports. Configured aliases in tsconfig.json:
 
+## Seed Data
+The application loads mock patient and heart rate data from patients.json file located in the project root during startup.
+
+## Running the Application
 ```bash
-# development
-$ npm run start
+# Development mode
+npm run start:dev
 
-# watch mode
-$ npm run start:dev
+# Production mode
+npm run start:prod
 
-# production mode
-$ npm run start:prod
+# Debug mode
+npm run start:debug
 ```
 
-## Run tests
+The server will start on http://localhost:3000
 
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
-
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
-
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
-
-# Backend Design Overview
-
-## Overview
-
-This service provides a backend for managing patients and their heart rate readings. The system is designed with a focus on clean architecture, separation of concerns, and scalability, while keeping the implementation lightweight and suitable for the scope of the assignment.
-
-The application is built using NestJS and follows a modular structure, separating domain logic, infrastructure, and cross-cutting concerns.
-
-## Architecture
-
-The system follows a layered architecture with clear responsibility boundaries:
-
-### 1. Controllers (Transport Layer)
-Controllers handle HTTP requests and responses. They are responsible only for routing and delegating work to services.
-
-### 2. Services (Business Logic)
-Services contain all core business logic, including:
-- Filtering high heart rate events
-- Calculating analytics (average, min, max)
-- Coordinating data access
-
-### 3. Repositories (Data Access Layer)
-Repositories abstract access to data. In this implementation, data is stored in memory, but the repository pattern allows easy replacement with a database in the future.
-
-### 4. Infrastructure Layer
-Responsible for:
-- Loading seed data from a JSON file
-- Providing repository implementations
-
-### 5. Cross-Cutting Concerns
-Handled separately from business logic:
-- Request tracking implemented using an interceptor
-- Input validation using DTOs and class-validator
-
-## Domain Structure
-
-The application is divided into the following modules:
-
-- **Patients Module** – handles patient retrieval and request tracking
-- **Heart Rate Module** – manages heart rate readings and high heart rate detection
-- **Analytics Module** – calculates statistics per patient within a time range
-
-This modular structure improves maintainability and scalability.
-
-## Data Storage
-
-The application uses an in-memory data store initialized from a JSON file.
-
-**Advantages:**
-- Simple and fast setup
-- No external dependencies
-
-**Trade-offs:**
-- Data is not persistent
-- Not suitable for distributed systems
-
-In a production environment, this layer can be replaced with a database (e.g., PostgreSQL) without affecting business logic.
-
-## API Design
-
-The API is designed around three main resources: patients, heart rate readings, and analytics.
-
-### Endpoints
+## API Endpoints
+### Patients
 
 | Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/patients` | Get all patients with pagination |
-| GET | `/patients/:id` | Retrieve a patient by ID |
-| GET | `/patients/:id/request-count` | Retrieve how many times the patient's data has been requested |
-| GET | `/heart-rate/high-events` | Retrieve all heart rate readings above 100 bpm with pagination |
-| GET | `/heart-rate/patient/:patientId` | Get all heart rate readings for a patient |
-| GET | `/analytics/:patientId?from=&to=` | Calculate average, minimum, and maximum heart rate values within a time range |
+|--|--|--|
+|GET |	/patients	| Get all patients with pagination |
+|GET |	/patients/:id	| Get patient by ID |
+|GET |	/patients/:id/request-count	| Get request count for a patient |
 
-### Pagination
+#### Query Parameters for /patients:
 
-Collection endpoints support pagination with the following query parameters:
+- offset (optional, default: 0) - Number of items to skip
+- limit (optional, default: 10, max: 100) - Maximum items to return
 
-- `offset` (default: 0) – Number of items to skip
-- `limit` (default: 10, max: 100) – Maximum number of items to return
 
-**Paginated Response Format:**
-```json
-{
-  "data": [...],
-  "total": 42,
-  "offset": 0,
-  "limit": 10,
-  "hasMore": true
-}
+### Heart Rate
+
+| Method | Endpoint | Description |
+|--|--|--|
+|GET |	/heart-rate/high-events	| Get all heart rate events above 100 bpm with pagination |
+|GET |	/heart-rate/patient/:patientId	| Get all heart rate readings for a patient |
+
+#### Query Parameters:
+
+- from (required) - Start date in ISO format
+- to (required) - End date in ISO format
+
+## API Documentation
+Interactive Swagger documentation is available at: http://localhost:3000/api
+
+#### Analytics
+| Method | Endpoint | Description |
+|--|--|--|
+|GET |	/analytics/:patientId	| Get heart rate statistics for a patient within a date range |
+
+#### Query Parameters:
+
+- from (required) - Start date in ISO format
+- to (required) - End date in ISO format
+
+### API Documentation
+Interactive Swagger documentation is available at: http://localhost:3000/api
+
+### Testing
+```bash
+# Unit tests
+npm run test
+
+# Unit tests with watch mode
+npm run test:watch
+
+# Unit tests with coverage
+npm run test:cov
+
+# E2E tests
+npm run test:e2e
+```
+
+### Error Handling
+The API returns appropriate HTTP status codes:
+
+| Status Code | Description |
+|--|--|
+|200 | Success |
+|400 | Bad Request (invalid date format, date range, or pagination parameters) |
+|404 | Not Found (patient does not exist) |
+
+## Suggested Improvements
+1. ***Request Tracking Persistence:*** Currently uses in-memory storage with Map. For production, implement Redis for distributed and persistent request counting.
+
+2. ***Database Integration:*** Replace in-memory repositories with PostgreSQL using TypeORM or Prisma for data persistence.
+
+3. Caching:*** Implement Redis caching for analytics endpoints to improve performance for frequently requested data.
+
+4. ***Authentication & Authorization:*** Add JWT-based authentication with role-based access control (doctor, patient, admin).
+
+5. ***Rate Limiting:*** Implement rate limiting using @nestjs/throttler to prevent API abuse.
+
+6. ***Logging:*** Add structured logging with Winston or Pino for better observability.
+
+7. ***Metrics:*** Export Prometheus metrics for monitoring API performance and request patterns.
+
+8. ***Data Export:*** Add endpoints to export analytics data in CSV or PDF format.
+
+9. ***WebSocket Notifications:*** Implement real-time notifications for high heart rate events.
+
+10. ***API Versioning:*** Add API versioning (e.g., /v1/patients) for future backward compatibility.
+
+11. *** Integrate monitoring*** (e.g., Prometheus)
