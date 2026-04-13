@@ -58,11 +58,10 @@ The server will start on http://localhost:3000
 |GET |	/patients/:id	| Get patient by ID |
 |GET |	/patients/:id/request-count	| Get request count for a patient |
 
-#### Query Parameters for /patients:
+**Query Parameters for /patients:**
 
 - offset (optional, default: 0) - Number of items to skip
 - limit (optional, default: 10, max: 100) - Maximum items to return
-
 
 ### Heart Rate
 
@@ -71,25 +70,22 @@ The server will start on http://localhost:3000
 |GET |	/heart-rate/high-events	| Get all heart rate events above 100 bpm with pagination |
 |GET |	/heart-rate/patient/:patientId	| Get all heart rate readings for a patient |
 
-#### Query Parameters:
+**Query Parameters:**
 
 - from (required) - Start date in ISO format
 - to (required) - End date in ISO format
-
-## API Documentation
-Interactive Swagger documentation is available at: http://localhost:3000/api
 
 #### Analytics
 | Method | Endpoint | Description |
 |--|--|--|
 |GET |	/analytics/:patientId	| Get heart rate statistics for a patient within a date range |
 
-#### Query Parameters:
+**Query Parameters:**
 
 - from (required) - Start date in ISO format
 - to (required) - End date in ISO format
 
-### API Documentation
+## API Documentation
 Interactive Swagger documentation is available at: http://localhost:3000/api
 
 ### Testing
