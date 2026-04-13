@@ -1,8 +1,12 @@
 {
   "name": "patient-service",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "A RESTful API service managing patients and their heart rate readings",
+  "author": "aliska76@gmail.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aliska76/patients-service.git"
+  },
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
