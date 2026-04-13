@@ -8,7 +8,7 @@ import { PaginationQueryDto, PaginatedResponseDto } from '@dto/pagination.dto';
 export class HeartRateService {
     constructor(
         private readonly heartRateRepo: HeartRateRepository,
-        private readonly patientRepo: PatientRepository,
+        private readonly patientRepo: PatientRepository
     ) { }
 
     getHighHeartRates(): HighHeartRateEventDto[] {
@@ -20,7 +20,7 @@ export class HeartRateService {
                 patientId: reading.patientId,
                 patientName: patient?.name || 'Unknown',
                 timestamp: reading.timestamp,
-                heartRate: reading.heartRate,
+                heartRate: reading.heartRate
             };
         });
     }
@@ -37,7 +37,7 @@ export class HeartRateService {
                 patientId: reading.patientId,
                 patientName: patient?.name || 'Unknown',
                 timestamp: reading.timestamp,
-                heartRate: reading.heartRate,
+                heartRate: reading.heartRate
             };
         });
 
@@ -46,7 +46,7 @@ export class HeartRateService {
             total,
             offset,
             limit,
-            hasMore: offset + limit < total,
+            hasMore: offset + limit < total
         };
     }
 
