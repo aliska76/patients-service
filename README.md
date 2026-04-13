@@ -137,4 +137,4 @@ The API returns appropriate HTTP status codes:
 
 10. ***API Versioning:*** Add API versioning (e.g., /v1/patients) for future backward compatibility.
 
-11. *** Integrate monitoring*** (e.g., Prometheus)
+11. ***Integrate monitoring*** (e.g., Prometheus)
