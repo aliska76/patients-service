@@ -112,25 +112,37 @@ The API returns appropriate HTTP status codes:
 |400 | Bad Request (invalid date format, date range, or pagination parameters) |
 |404 | Not Found (patient does not exist) |
 
+## CORS Configuration
+
+Cross-Origin Resource Sharing (CORS) is implemented to allow browser-based clients from different domains to access the API.
+
+In the current implementation, CORS is configured in `main.ts`:
+
+```typescript
+app.enableCors({
+  origin: 'http://localhost:3001'
+});
+```
+
 ## Suggested Improvements
-1. ***Request Tracking Persistence:*** Currently uses in-memory storage with Map. For production, implement Redis for distributed and persistent request counting.
+1. **Request Tracking Persistence:** Currently uses in-memory storage with Map. For production, implement Redis for distributed and persistent request counting.
 
-2. ***Database Integration:*** Replace in-memory repositories with PostgreSQL using TypeORM or Prisma for data persistence.
+2. **Database Integration:** Replace in-memory repositories with PostgreSQL using TypeORM or Prisma for data persistence.
 
-3. Caching:*** Implement Redis caching for analytics endpoints to improve performance for frequently requested data.
+3. **Caching:** Implement Redis caching for analytics endpoints to improve performance for frequently requested data.
 
-4. ***Authentication & Authorization:*** Add JWT-based authentication with role-based access control (doctor, patient, admin).
+4. **Authentication & Authorization:** Add JWT-based authentication with role-based access control (doctor, patient, admin).
 
-5. ***Rate Limiting:*** Implement rate limiting using @nestjs/throttler to prevent API abuse.
+5. **Rate Limiting:*** Implement rate limiting using @nestjs/throttler to prevent API abuse.
 
-6. ***Logging:*** Add structured logging with Winston or Pino for better observability.
+6. **Logging:** Add structured logging with Winston or Pino for better observability.
 
-7. ***Metrics:*** Export Prometheus metrics for monitoring API performance and request patterns.
+7. **Metrics:** Export Prometheus metrics for monitoring API performance and request patterns.
 
-8. ***Data Export:*** Add endpoints to export analytics data in CSV or PDF format.
+8. **Data Export:** Add endpoints to export analytics data in CSV or PDF format.
 
-9. ***WebSocket Notifications:*** Implement real-time notifications for high heart rate events.
+9. **WebSocket Notifications:** Implement real-time notifications for high heart rate events.
 
-10. ***API Versioning:*** Add API versioning (e.g., /v1/patients) for future backward compatibility.
+10. **API Versioning:** Add API versioning (e.g., /v1/patients) for future backward compatibility.
 
-11. ***Integrate monitoring*** (e.g., Prometheus)
+11. **Integrate monitoring** (e.g., Prometheus)
