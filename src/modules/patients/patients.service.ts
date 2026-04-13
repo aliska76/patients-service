@@ -27,7 +27,7 @@ export class PatientsService {
             total,
             offset,
             limit,
-            hasMore: offset + limit < total,
+            hasMore: offset + limit < total
         };
     }
 
